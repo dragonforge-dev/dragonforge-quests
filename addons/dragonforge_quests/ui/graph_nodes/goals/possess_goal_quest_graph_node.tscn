@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://dg8ei6x1ofrqt"]
+
+[ext_resource type="Texture2D" uid="uid://mv2vhp07n1ju" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_square_depth_border.png" id="1_0vwoy"]
+[ext_resource type="Texture2D" uid="uid://ciuq03dcfxni7" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_square_depth_line.png" id="2_4j8sy"]
+[ext_resource type="Texture2D" uid="uid://cybs2162kk36f" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_rectangle_depth_flat.png" id="3_t3ix5"]
+[ext_resource type="Texture2D" uid="uid://de8tupw3bui0b" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_chest.png" id="4_0vwoy"]
+[ext_resource type="Texture2D" uid="uid://da384oqhanf3e" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/arrowSilver_right.png" id="5_4j8sy"]
+[ext_resource type="Script" uid="uid://dv8e6plm4xsru" path="res://addons/dragonforge_quests/ui/graph_nodes/quest_graph_node.gd" id="6_t3ix5"]
+[ext_resource type="Script" uid="uid://t0k43bd6hiet" path="res://addons/dragonforge_quests/ui/graph_nodes/spin_box.gd" id="7_g7lh6"]
+[ext_resource type="Script" uid="uid://bmbms4a4jx31u" path="res://addons/dragonforge_quests/ui/graph_nodes/resource_drop_zone.gd" id="7_mby88"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hajlk"]
+texture = ExtResource("1_0vwoy")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kppbv"]
+texture = ExtResource("2_4j8sy")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0cxs"]
+texture = ExtResource("3_t3ix5")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0mmh2"]
+texture = ExtResource("3_t3ix5")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mby88"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PossessGoalQuestGraphNode" type="GraphNode" unique_id=2075517598]
+offset_right = 9.0
+offset_bottom = 55.0
+theme_override_colors/resizer_color = Color(0, 0, 0, 1)
+theme_override_constants/port_h_offset = -5
+theme_override_styles/panel = SubResource("StyleBoxTexture_hajlk")
+theme_override_styles/panel_selected = SubResource("StyleBoxTexture_kppbv")
+theme_override_styles/panel_focus = SubResource("StyleBoxTexture_kppbv")
+theme_override_styles/titlebar = SubResource("StyleBoxTexture_e0cxs")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxTexture_0mmh2")
+resizable = true
+title = "Possess"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(0.09411765, 0.53333336, 0.72156864, 1)
+slot/0/left_icon = ExtResource("4_0vwoy")
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(0.09411765, 0.53333336, 0.72156864, 1)
+slot/0/right_icon = ExtResource("5_4j8sy")
+slot/0/draw_stylebox = true
+script = ExtResource("6_t3ix5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2116016187]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer" unique_id=1893684590]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/up_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/up_hover_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 0.5019608)
+theme_override_colors/down_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 0.5019608)
+min_value = 1.0
+value = 1.0
+rounded = true
+alignment = 2
+custom_arrow_step = 1.0
+script = ExtResource("7_g7lh6")
+
+[node name="ResourceDropZone" type="Button" parent="HBoxContainer" unique_id=235969792]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mby88")
+text = "[Item]"
+script = ExtResource("7_mby88")
+
+[node name="LoadResourceFileDialog" type="FileDialog" parent="HBoxContainer/ResourceDropZone" unique_id=605369979]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(1024, 600)
+file_mode = 0
+display_mode = 1
+filters = PackedStringArray("*.tres")

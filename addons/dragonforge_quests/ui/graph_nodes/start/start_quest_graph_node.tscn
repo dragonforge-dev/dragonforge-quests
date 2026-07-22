@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://cth6kkxg234md"]
+
+[ext_resource type="Texture2D" uid="uid://bewouhie68vei" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/start/button_square_depth_border.png" id="1_2yghb"]
+[ext_resource type="Texture2D" uid="uid://cbpcvp65gma5i" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/start/button_square_depth_line.png" id="2_7ik72"]
+[ext_resource type="Texture2D" uid="uid://b0a7dhafo1i63" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/start/button_rectangle_depth_flat.png" id="3_78xdx"]
+[ext_resource type="Texture2D" uid="uid://da384oqhanf3e" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/arrowSilver_right.png" id="4_7ik72"]
+[ext_resource type="Script" uid="uid://cck4dhisrecqd" path="res://addons/dragonforge_quests/ui/graph_nodes/start/start_quest_graph_node.gd" id="5_78xdx"]
+[ext_resource type="Script" uid="uid://l7aybtnaym5k" path="res://addons/dragonforge_quests/ui/bypass_undo_redo_on_focus.gd" id="6_ey1pw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e54ei"]
+texture = ExtResource("1_2yghb")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n04k5"]
+texture = ExtResource("2_7ik72")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bkqfq"]
+texture = ExtResource("3_78xdx")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gsv70"]
+texture = ExtResource("3_78xdx")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+
+[node name="StartQuestGraphNode" type="GraphNode" unique_id=2075517598]
+custom_minimum_size = Vector2(260, 0)
+offset_right = 9.0
+offset_bottom = 55.0
+theme_override_colors/resizer_color = Color(0, 0, 0, 1)
+theme_override_constants/separation = 5
+theme_override_constants/port_h_offset = -2
+theme_override_styles/panel = SubResource("StyleBoxTexture_e54ei")
+theme_override_styles/panel_selected = SubResource("StyleBoxTexture_n04k5")
+theme_override_styles/panel_focus = SubResource("StyleBoxTexture_n04k5")
+theme_override_styles/titlebar = SubResource("StyleBoxTexture_bkqfq")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxTexture_gsv70")
+resizable = true
+title = "Start"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = true
+slot/2/right_type = 0
+slot/2/right_color = Color(0.09411765, 0.53333336, 0.72156864, 1)
+slot/2/right_icon = ExtResource("4_7ik72")
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = true
+slot/3/right_type = 1
+slot/3/right_color = Color(0.85490197, 0.68235296, 0, 1)
+slot/3/right_icon = ExtResource("4_7ik72")
+slot/3/draw_stylebox = true
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color(1, 1, 1, 1)
+slot/4/left_icon = null
+slot/4/right_enabled = true
+slot/4/right_type = 2
+slot/4/right_color = Color(1, 0, 0, 1)
+slot/4/right_icon = ExtResource("4_7ik72")
+slot/4/draw_stylebox = true
+script = ExtResource("5_78xdx")
+
+[node name="QuestName" type="LineEdit" parent="." unique_id=842162287]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Quest Name"
+
+[node name="BypassUndoRedoOnFocus" type="Node" parent="QuestName" unique_id=1858358683]
+script = ExtResource("6_ey1pw")
+metadata/_custom_type_script = "uid://l7aybtnaym5k"
+
+[node name="QuestDescription" type="TextEdit" parent="." unique_id=1363880973]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Quest Description"
+wrap_mode = 1
+
+[node name="BypassUndoRedoOnFocus" type="Node" parent="QuestDescription" unique_id=110890021]
+script = ExtResource("6_ey1pw")
+metadata/_custom_type_script = "uid://l7aybtnaym5k"
+
+[node name="Label" type="Label" parent="." unique_id=2075332389]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_font_sizes/font_size = 12
+text = "Goal(s)"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1307827898]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62126726, 0.4930231, 1.92523e-07, 1)
+theme_override_font_sizes/font_size = 12
+text = "Reward(s)"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="." unique_id=360531047]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Failure(s)"
+horizontal_alignment = 2

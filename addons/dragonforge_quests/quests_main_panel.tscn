@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://b11g0mildc5aj"]
+
+[ext_resource type="Script" uid="uid://c8b7jbv6u70kf" path="res://addons/dragonforge_quests/quests_main_panel.gd" id="1_1r8on"]
+[ext_resource type="Script" uid="uid://bvcw8xpp42aef" path="res://addons/dragonforge_quests/ui/menus/file_menu.gd" id="1_5hawp"]
+[ext_resource type="Script" uid="uid://cn681o3uwtla" path="res://addons/dragonforge_quests/ui/menus/edit_menu.gd" id="2_1r8on"]
+[ext_resource type="Script" uid="uid://dxj0ojyycdxwr" path="res://addons/dragonforge_quests/ui/node_list.gd" id="5_mueb8"]
+[ext_resource type="Texture2D" uid="uid://cajvdxjxaas4t" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_map.png" id="5_qldhq"]
+[ext_resource type="Texture2D" uid="uid://bfbf44icj7obo" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_coin.png" id="6_2o5c3"]
+[ext_resource type="Script" uid="uid://c5km6rj0gnm2j" path="res://addons/dragonforge_quests/ui/quest_graph_edit.gd" id="6_j73um"]
+[ext_resource type="Texture2D" uid="uid://bdsl25u4yu1x8" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_skull.png" id="7_2o5c3"]
+[ext_resource type="Texture2D" uid="uid://de8tupw3bui0b" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_chest.png" id="8_pu1mx"]
+[ext_resource type="Texture2D" uid="uid://sq8vh0cqgpqr" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_megaphone.png" id="9_588tt"]
+[ext_resource type="PackedScene" uid="uid://dvrtak8fe4qw2" path="res://addons/dragonforge_quests/ui/graph_nodes/goals/collect_goal_quest_graph_node.tscn" id="10_3odoa"]
+[ext_resource type="Texture2D" uid="uid://d0vx6rr01fe7v" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_message.png" id="10_pijaq"]
+[ext_resource type="Texture2D" uid="uid://cslebn7qjy5hu" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_bomb.png" id="11_h1fd8"]
+[ext_resource type="PackedScene" uid="uid://hh268l34qeul" path="res://addons/dragonforge_quests/ui/graph_nodes/reward/xp_reward_quest_graph_node.tscn" id="11_h2x68"]
+[ext_resource type="PackedScene" uid="uid://bp1ipgtevdtcm" path="res://addons/dragonforge_quests/ui/graph_nodes/failure/npc_death_failure_quest_graph_node.tscn" id="12_ln81y"]
+[ext_resource type="PackedScene" uid="uid://dg8ei6x1ofrqt" path="res://addons/dragonforge_quests/ui/graph_nodes/goals/possess_goal_quest_graph_node.tscn" id="13_588tt"]
+[ext_resource type="Texture2D" uid="uid://ccnntcxvmxxpu" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_star.png" id="13_tsqa6"]
+[ext_resource type="PackedScene" uid="uid://deovxssw0647q" path="res://addons/dragonforge_quests/ui/graph_nodes/goals/talk_goal_quest_graph_node.tscn" id="14_55c35"]
+[ext_resource type="Texture2D" uid="uid://h1025b0tdtb5" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_trophy.png" id="14_knbd6"]
+[ext_resource type="Texture2D" uid="uid://bouilvvhv6353" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_gift.png" id="15_h0uxy"]
+[ext_resource type="PackedScene" uid="uid://cm2txxo0uudnt" path="res://addons/dragonforge_quests/ui/graph_nodes/goals/deliver_goal_quest_graph_node.tscn" id="15_rkkba"]
+[ext_resource type="Texture2D" uid="uid://d8x3g7me0y5u" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_hourglass.png" id="16_erofg"]
+[ext_resource type="PackedScene" uid="uid://ranr1bwvtgs0" path="res://addons/dragonforge_quests/ui/graph_nodes/goals/eliminate_goal_quest_graph_node.tscn" id="16_eso0f"]
+[ext_resource type="PackedScene" uid="uid://dtrinomu2kwj7" path="res://addons/dragonforge_quests/ui/graph_nodes/reward/level_reward_quest_graph_node.tscn" id="22_bcj7m"]
+[ext_resource type="PackedScene" uid="uid://dv3oykt1dtscx" path="res://addons/dragonforge_quests/ui/graph_nodes/reward/currency_reward_quest_graph_node.tscn" id="23_laecq"]
+[ext_resource type="PackedScene" uid="uid://c1bek23wv44ie" path="res://addons/dragonforge_quests/ui/graph_nodes/reward/item_reward_quest_graph_node.tscn" id="24_b375r"]
+[ext_resource type="PackedScene" uid="uid://c0m4mjdgf45hs" path="res://addons/dragonforge_quests/ui/graph_nodes/failure/timeout_failure_quest_graph_node.tscn" id="28_laecq"]
+[ext_resource type="Script" uid="uid://c3lu8q1m43y1q" path="res://addons/dragonforge_quests/ui/graph_tab_container.gd" id="30_b375r"]
+
+[node name="QuestsMainPanel" type="PanelContainer" unique_id=577692410]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1r8on")
+
+[node name="MainWindow" type="VSplitContainer" parent="." unique_id=739001718]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="MenuBar" type="MenuBar" parent="MainWindow" unique_id=1226060697]
+layout_mode = 2
+
+[node name="FileMenu" type="PopupMenu" parent="MainWindow/MenuBar" unique_id=1105451327]
+title = "File"
+item_count = 4
+item_0/text = "New"
+item_0/id = 0
+item_1/text = "Open"
+item_1/id = 1
+item_2/text = "Save"
+item_2/id = 2
+item_3/text = "Close"
+item_3/id = 3
+script = ExtResource("1_5hawp")
+
+[node name="EditMenu" type="PopupMenu" parent="MainWindow/MenuBar" unique_id=1046452841]
+title = "Edit"
+item_count = 2
+item_0/text = "Undo (Ctrl +Z)"
+item_0/id = 0
+item_1/text = "Redo (Ctrl + Shift + Z)"
+item_1/id = 1
+script = ExtResource("2_1r8on")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MainWindow" unique_id=1859490827]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="MainWindow/HSplitContainer" unique_id=1329778720]
+layout_mode = 2
+current_tab = 0
+drag_to_rearrange_enabled = true
+
+[node name="Nodes" type="VBoxContainer" parent="MainWindow/HSplitContainer/TabContainer" unique_id=1401201468]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Goal" type="VSplitContainer" parent="MainWindow/HSplitContainer/TabContainer/Nodes" unique_id=381544575]
+custom_minimum_size = Vector2(160, 223)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainWindow/HSplitContainer/TabContainer/Nodes/Goal" unique_id=1452590332]
+layout_mode = 2
+text = "Goals"
+horizontal_alignment = 1
+
+[node name="GoalNodes" type="ItemList" parent="MainWindow/HSplitContainer/TabContainer/Nodes/Goal" unique_id=847397311]
+layout_mode = 2
+item_count = 5
+item_0/text = "Collect"
+item_0/icon = ExtResource("5_qldhq")
+item_1/text = "Posses"
+item_1/icon = ExtResource("8_pu1mx")
+item_2/text = "Talk"
+item_2/icon = ExtResource("9_588tt")
+item_3/text = "Deliver"
+item_3/icon = ExtResource("10_pijaq")
+item_4/text = "Eliminate"
+item_4/icon = ExtResource("11_h1fd8")
+script = ExtResource("5_mueb8")
+graph_nodes = Array[PackedScene]([ExtResource("10_3odoa"), ExtResource("13_588tt"), ExtResource("14_55c35"), ExtResource("15_rkkba"), ExtResource("16_eso0f")])
+
+[node name="Reward" type="VSplitContainer" parent="MainWindow/HSplitContainer/TabContainer/Nodes" unique_id=554034753]
+custom_minimum_size = Vector2(160, 187)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainWindow/HSplitContainer/TabContainer/Nodes/Reward" unique_id=639383873]
+layout_mode = 2
+text = "Rewards"
+horizontal_alignment = 1
+
+[node name="RewardNodes" type="ItemList" parent="MainWindow/HSplitContainer/TabContainer/Nodes/Reward" unique_id=1836001998]
+layout_mode = 2
+item_count = 4
+item_0/text = "XP"
+item_0/icon = ExtResource("13_tsqa6")
+item_1/text = "Level"
+item_1/icon = ExtResource("14_knbd6")
+item_2/text = "Currency"
+item_2/icon = ExtResource("6_2o5c3")
+item_3/text = "Item"
+item_3/icon = ExtResource("15_h0uxy")
+script = ExtResource("5_mueb8")
+graph_nodes = Array[PackedScene]([ExtResource("11_h2x68"), ExtResource("22_bcj7m"), ExtResource("23_laecq"), ExtResource("24_b375r")])
+
+[node name="Failure" type="VSplitContainer" parent="MainWindow/HSplitContainer/TabContainer/Nodes" unique_id=1093203039]
+custom_minimum_size = Vector2(160, 115)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainWindow/HSplitContainer/TabContainer/Nodes/Failure" unique_id=718069003]
+layout_mode = 2
+text = "Failures"
+horizontal_alignment = 1
+
+[node name="FailureNodes" type="ItemList" parent="MainWindow/HSplitContainer/TabContainer/Nodes/Failure" unique_id=2128656363]
+layout_mode = 2
+item_count = 2
+item_0/text = "NPC Death"
+item_0/icon = ExtResource("7_2o5c3")
+item_1/text = "Timeout"
+item_1/icon = ExtResource("16_erofg")
+script = ExtResource("5_mueb8")
+graph_nodes = Array[PackedScene]([ExtResource("12_ln81y"), ExtResource("28_laecq")])
+
+[node name="Graphs" type="TabContainer" parent="MainWindow/HSplitContainer" unique_id=2086804669]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 617)
+layout_mode = 2
+current_tab = 0
+drag_to_rearrange_enabled = true
+tab_1/title = "+"
+script = ExtResource("30_b375r")
+
+[node name="New Quest" type="GraphEdit" parent="MainWindow/HSplitContainer/Graphs" unique_id=35840609]
+layout_mode = 2
+right_disconnects = true
+script = ExtResource("6_j73um")
+metadata/_tab_index = 0
+
+[node name="AddGraphTab" type="Control" parent="MainWindow/HSplitContainer/Graphs" unique_id=456908680]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "+"
+
+[node name="SaveFileDialog" type="FileDialog" parent="." unique_id=326422696]
+oversampling_override = 1.0
+title = "Save a Quest"
+initial_position = 2
+size = Vector2i(1024, 600)
+display_mode = 1
+filters = PackedStringArray("*.tres", "*.quest")
+
+[node name="LoadFileDialog" type="FileDialog" parent="." unique_id=2119757941]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(1024, 600)
+file_mode = 0
+display_mode = 1
+filters = PackedStringArray("*.tres", "*.quest")

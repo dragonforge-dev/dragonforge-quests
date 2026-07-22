@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bp1ipgtevdtcm"]
+
+[ext_resource type="Texture2D" uid="uid://cncg6mtblis80" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/failure/button_square_depth_border.png" id="1_20787"]
+[ext_resource type="Texture2D" uid="uid://dl8nfcuk4vya8" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/failure/button_square_depth_line.png" id="2_uvt6r"]
+[ext_resource type="Texture2D" uid="uid://ccl7h1k2t3af4" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/failure/button_rectangle_depth_flat.png" id="3_4jy1i"]
+[ext_resource type="Texture2D" uid="uid://bdsl25u4yu1x8" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_skull.png" id="4_uvt6r"]
+[ext_resource type="Script" uid="uid://dv8e6plm4xsru" path="res://addons/dragonforge_quests/ui/graph_nodes/quest_graph_node.gd" id="5_77o4m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlb6c"]
+texture = ExtResource("1_20787")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uh0y0"]
+texture = ExtResource("2_uvt6r")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dv23l"]
+texture = ExtResource("3_4jy1i")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7q1oj"]
+texture = ExtResource("3_4jy1i")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+
+[node name="DeathFailureQuestGraphNode" type="GraphNode" unique_id=2075517598]
+custom_minimum_size = Vector2(150, 0)
+offset_right = 9.0
+offset_bottom = 55.0
+theme_override_colors/resizer_color = Color(0, 0, 0, 1)
+theme_override_constants/port_h_offset = -2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mlb6c")
+theme_override_styles/panel_selected = SubResource("StyleBoxTexture_uh0y0")
+theme_override_styles/panel_focus = SubResource("StyleBoxTexture_uh0y0")
+theme_override_styles/titlebar = SubResource("StyleBoxTexture_dv23l")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxTexture_7q1oj")
+resizable = true
+title = "NPC Death"
+slot/0/left_enabled = true
+slot/0/left_type = 2
+slot/0/left_color = Color(1, 0, 0, 1)
+slot/0/left_icon = ExtResource("4_uvt6r")
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("5_77o4m")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=391429519]
+layout_mode = 2
+placeholder_text = "NPC Name"

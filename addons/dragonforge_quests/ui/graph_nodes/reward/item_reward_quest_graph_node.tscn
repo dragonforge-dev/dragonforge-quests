@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://c1bek23wv44ie"]
+
+[ext_resource type="Texture2D" uid="uid://cs5yi1lefghtc" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/reward/button_square_depth_border.png" id="1_tlnm1"]
+[ext_resource type="Texture2D" uid="uid://ckp0cdbysb451" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/reward/button_square_depth_line.png" id="2_a3khy"]
+[ext_resource type="Texture2D" uid="uid://btyp54e5f51p8" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/reward/button_rectangle_depth_flat.png" id="3_dlxw2"]
+[ext_resource type="Texture2D" uid="uid://bouilvvhv6353" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_gift.png" id="4_tlnm1"]
+[ext_resource type="Texture2D" uid="uid://da384oqhanf3e" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/arrowSilver_right.png" id="5_ulnlf"]
+[ext_resource type="Script" uid="uid://dv8e6plm4xsru" path="res://addons/dragonforge_quests/ui/graph_nodes/quest_graph_node.gd" id="6_a3khy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hajlk"]
+texture = ExtResource("1_tlnm1")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phtl7"]
+texture = ExtResource("2_a3khy")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nukex"]
+texture = ExtResource("3_dlxw2")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xe4f"]
+texture = ExtResource("3_dlxw2")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+
+[node name="ItemRewardQuestGraphNode" type="GraphNode" unique_id=2075517598]
+offset_right = 9.0
+offset_bottom = 55.0
+theme_override_colors/resizer_color = Color(0, 0, 0, 1)
+theme_override_constants/port_h_offset = -2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hajlk")
+theme_override_styles/panel_selected = SubResource("StyleBoxTexture_phtl7")
+theme_override_styles/panel_focus = SubResource("StyleBoxTexture_phtl7")
+theme_override_styles/titlebar = SubResource("StyleBoxTexture_nukex")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxTexture_1xe4f")
+resizable = true
+title = "Item"
+slot/0/left_enabled = true
+slot/0/left_type = 1
+slot/0/left_color = Color(0.85490197, 0.68235296, 0, 1)
+slot/0/left_icon = ExtResource("4_tlnm1")
+slot/0/right_enabled = true
+slot/0/right_type = 1
+slot/0/right_color = Color(0.85490197, 0.68235296, 0, 1)
+slot/0/right_icon = ExtResource("5_ulnlf")
+slot/0/draw_stylebox = true
+script = ExtResource("6_a3khy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2084813247]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer" unique_id=1893684590]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/up_icon_modulate = Color(0.85490197, 0.68235296, 0, 1)
+theme_override_colors/up_hover_icon_modulate = Color(0.85490197, 0.68235296, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0.85490197, 0.68235296, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0.85490197, 0.68235296, 0, 0.5019608)
+theme_override_colors/down_icon_modulate = Color(0.85490197, 0.68235296, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0.85490197, 0.68235296, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0.85490197, 0.68235296, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0.85490197, 0.68235296, 0, 0.5019608)
+value = 1.0
+rounded = true
+allow_greater = true
+alignment = 2
+custom_arrow_round = true
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer" unique_id=907863236]
+layout_mode = 2
+placeholder_text = "Item"

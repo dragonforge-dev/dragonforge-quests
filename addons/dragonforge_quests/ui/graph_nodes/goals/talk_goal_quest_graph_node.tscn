@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://deovxssw0647q"]
+
+[ext_resource type="Texture2D" uid="uid://mv2vhp07n1ju" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_square_depth_border.png" id="1_2lhj4"]
+[ext_resource type="Texture2D" uid="uid://ciuq03dcfxni7" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_square_depth_line.png" id="2_meltn"]
+[ext_resource type="Texture2D" uid="uid://cybs2162kk36f" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_rectangle_depth_flat.png" id="3_fgd03"]
+[ext_resource type="Texture2D" uid="uid://sq8vh0cqgpqr" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_megaphone.png" id="4_2lhj4"]
+[ext_resource type="Texture2D" uid="uid://da384oqhanf3e" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/arrowSilver_right.png" id="5_meltn"]
+[ext_resource type="Script" uid="uid://dv8e6plm4xsru" path="res://addons/dragonforge_quests/ui/graph_nodes/quest_graph_node.gd" id="6_fgd03"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hajlk"]
+texture = ExtResource("1_2lhj4")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kppbv"]
+texture = ExtResource("2_meltn")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0cxs"]
+texture = ExtResource("3_fgd03")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0mmh2"]
+texture = ExtResource("3_fgd03")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+
+[node name="TalkGoalQuestGraphNode" type="GraphNode" unique_id=2075517598]
+offset_right = 9.0
+offset_bottom = 55.0
+theme_override_colors/resizer_color = Color(0, 0, 0, 1)
+theme_override_constants/port_h_offset = -5
+theme_override_styles/panel = SubResource("StyleBoxTexture_hajlk")
+theme_override_styles/panel_selected = SubResource("StyleBoxTexture_kppbv")
+theme_override_styles/panel_focus = SubResource("StyleBoxTexture_kppbv")
+theme_override_styles/titlebar = SubResource("StyleBoxTexture_e0cxs")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxTexture_0mmh2")
+resizable = true
+title = "Talk"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(0.10980392, 0.62352943, 0.84313726, 1)
+slot/0/left_icon = ExtResource("4_2lhj4")
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(0.09411765, 0.53333336, 0.72156864, 1)
+slot/0/right_icon = ExtResource("5_meltn")
+slot/0/draw_stylebox = true
+script = ExtResource("6_fgd03")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2116016187]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer" unique_id=1525021929]
+layout_mode = 2
+placeholder_text = "NPC"
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1787051559]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+text = "until"
+
+[node name="LineEdit2" type="LineEdit" parent="HBoxContainer" unique_id=1935207184]
+layout_mode = 2
+placeholder_text = "State"

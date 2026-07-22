@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dvrtak8fe4qw2"]
+
+[ext_resource type="Texture2D" uid="uid://mv2vhp07n1ju" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_square_depth_border.png" id="1_1afjy"]
+[ext_resource type="Texture2D" uid="uid://ciuq03dcfxni7" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_square_depth_line.png" id="2_pwryt"]
+[ext_resource type="Texture2D" uid="uid://cybs2162kk36f" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/goal/button_rectangle_depth_flat.png" id="3_vfudg"]
+[ext_resource type="Texture2D" uid="uid://cajvdxjxaas4t" path="res://addons/dragonforge_quests/assets/textures/icons/graph_node/common_item_map.png" id="4_qeat8"]
+[ext_resource type="Texture2D" uid="uid://da384oqhanf3e" path="res://addons/dragonforge_quests/assets/textures/ui/graph_nodes/arrowSilver_right.png" id="5_hv0r5"]
+[ext_resource type="Script" uid="uid://dv8e6plm4xsru" path="res://addons/dragonforge_quests/ui/graph_nodes/quest_graph_node.gd" id="6_1q88y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hajlk"]
+texture = ExtResource("1_1afjy")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kppbv"]
+texture = ExtResource("2_pwryt")
+texture_margin_left = 12.0
+texture_margin_top = 10.0
+texture_margin_right = 12.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0cxs"]
+texture = ExtResource("3_vfudg")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0mmh2"]
+texture = ExtResource("3_vfudg")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="DPITexture" id="DPITexture_e0cxs"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".85\" stroke-width=\"2\" d=\"m2 4 4 4 4-4\"/></svg>
+"
+
+[node name="CollectGoalQuestGraphNode" type="GraphNode" unique_id=2075517598]
+offset_right = 9.0
+offset_bottom = 55.0
+theme_override_colors/resizer_color = Color(0, 0, 0, 1)
+theme_override_constants/port_h_offset = -5
+theme_override_styles/panel = SubResource("StyleBoxTexture_hajlk")
+theme_override_styles/panel_selected = SubResource("StyleBoxTexture_kppbv")
+theme_override_styles/panel_focus = SubResource("StyleBoxTexture_kppbv")
+theme_override_styles/titlebar = SubResource("StyleBoxTexture_e0cxs")
+theme_override_styles/titlebar_selected = SubResource("StyleBoxTexture_0mmh2")
+resizable = true
+title = "Collect"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(0.09411765, 0.53333336, 0.72156864, 1)
+slot/0/left_icon = ExtResource("4_qeat8")
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(0.09411765, 0.53333336, 0.72156864, 1)
+slot/0/right_icon = ExtResource("5_hv0r5")
+slot/0/draw_stylebox = true
+script = ExtResource("6_1q88y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2116016187]
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer" unique_id=1893684590]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/up_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/up_hover_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 0.5019608)
+theme_override_colors/down_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0.09411765, 0.53333336, 0.72156864, 0.5019608)
+min_value = 1.0
+value = 5.0
+rounded = true
+custom_arrow_step = 5.0
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer" unique_id=862532275]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_icons/arrow = SubResource("DPITexture_e0cxs")
+selected = 0
+item_count = 4
+popup/item_0/text = "Sticks"
+popup/item_0/id = 0
+popup/item_1/text = "Wood"
+popup/item_1/id = 1
+popup/item_2/text = "Flint"
+popup/item_2/id = 2
+popup/item_3/text = "Flint Axe"
+popup/item_3/id = 3

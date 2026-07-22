@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" format=3]
+
+[ext_resource type="Script" path="res://addons/dragonforge_quests/assets/resources/quest_node.gd" id="1_6emtp"]
+[ext_resource type="Script" path="res://addons/dragonforge_quests/assets/resources/quest.gd" id="2_cdqhm"]
+
+[resource]
+script = ExtResource("2_cdqhm")
+name = "New Quest7"
+description = "Quest 7"
